@@ -1,6 +1,7 @@
 <?php
 
 require 'Validator.php';
+require 'Database.php';
 
 $config = require 'config.php';
 $db = new Database($config['database']);
@@ -22,4 +23,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require 'views/note-create.view.php';
+require 'views/notes/create.view.php';
