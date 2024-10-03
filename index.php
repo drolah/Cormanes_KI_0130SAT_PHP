@@ -1,14 +1,9 @@
 <?php
 
 require 'functions.php';
+require 'Database.php';
 
-$dsn = "mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4";
+$db = new Database();
+$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
 
-$pdo = new PDO($dsn);
-
-$statement = $pdo->prepare("select * from posts where id = 1");
-$statement->execute();
-
-$post = $statement->fetch(PDO::FETCH_ASSOC);
-
-echo "<li>" . $post['title'] . "</li>";
+dd($posts);
