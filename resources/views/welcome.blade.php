@@ -15,9 +15,9 @@
                 <section>
                     <x-section-heading>Recent Jobs</x-section-heading>
                     <div class="mt-6 space-y-6">
-                        <x-job-card-wide />
-                        <x-job-card-wide />
-                        <x-job-card-wide />
+                        @foreach($featuredJobs as $job)
+                            <x-job-card :$job />
+                        @endforeach
                     </div>
                 </section>
             </div>
